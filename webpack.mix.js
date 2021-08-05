@@ -11,7 +11,14 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        require("tailwindcss"),
-    ]);
+mix
+    .css('resources/css/admin/app.css', 'public/css/admin')
+    .js('resources/js/admin/app.js', 'public/js/admin')
+    .js('resources/js/app.js', 'public/js')
+    .postCss('resources/css/app.css', 'public/css',
+        [
+            require('postcss-import'),
+            require('tailwindcss'),
+            require('autoprefixer'),
+        ]
+    );

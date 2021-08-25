@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -87,5 +88,16 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         //
+    }
+
+    public function preview(Post $post)
+    {
+        if ($post->user_id != Auth::id()) {
+            abort(404);
+        }
+
+        return view('post.show', [
+            'post' => $post,
+        ]);
     }
 }

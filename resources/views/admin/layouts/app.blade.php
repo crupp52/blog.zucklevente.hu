@@ -17,7 +17,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="../assets/img/favicon.png">
@@ -25,17 +25,19 @@
         Soft UI Dashboard by Creative Tim
     </title>
     <!--     Fonts and icons     -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet"/>
     <!-- Nucleo Icons -->
 {{--    <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />--}}
 {{--    <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />--}}
-    <!-- Font Awesome Icons -->
+<!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
 {{--    <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />--}}
-    <!-- CSS Files -->
-{{--    <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />--}}
+<!-- CSS Files -->
+    {{--    <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />--}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
-    <link href="{{ asset('css/admin/app.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/admin/app.css') }}" rel="stylesheet"/>
+
+    @livewireStyles
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
@@ -138,7 +140,7 @@
                                 <a class="dropdown-item border-radius-md" href="javascript:;">
                                     <div class="d-flex py-1">
                                         <div class="avatar avatar-sm bg-gradient-secondary  me-3  my-auto">
-                                            <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                            <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg">
                                                 <title>credit-card</title>
                                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                                     <g transform="translate(-2169.000000, -745.000000)" fill="#FFFFFF" fill-rule="nonzero">
@@ -178,9 +180,11 @@
                 <div class="row align-items-center justify-content-lg-between">
                     <div class="col-lg-6 mb-lg-0 mb-4">
                         <div class="copyright text-center text-sm text-muted text-lg-start">
-                            © <script>
+                            ©
+                            <script>
                                 document.write(new Date().getFullYear())
-                            </script>,
+                            </script>
+                            ,
                             made with <i class="fa fa-heart"></i> by
                             <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a>
                             for a better web.
@@ -273,15 +277,11 @@
         </div>
     </div>
 </div>
-<!--   Core JS Files   -->
-{{--<script src="../assets/js/core/popper.min.js"></script>--}}
-{{--<script src="../assets/js/core/bootstrap.min.js"></script>--}}
-{{--<script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>--}}
-{{--<script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>--}}
 <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.5.2/perfect-scrollbar.min.js" integrity="sha512-byagY9YdfRsmvM/9ld4XQ9mvd9uNhNOaMzvCYpPw1CLuoIXAdWR8/6rHjRwuWy0Pi+JGWjDHiE7tVGhtPd21ZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script src="{{ asset('js/admin/app.js') }}"></script>
+
 <script>
     var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {
@@ -293,9 +293,7 @@
 </script>
 
 @stack('js')
-
-<!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-{{--<script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>--}}
+@livewireScripts
 </body>
 
 </html>

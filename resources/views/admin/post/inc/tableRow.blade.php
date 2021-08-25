@@ -15,9 +15,15 @@
         </p>
     </td>
     <td>
+        <p class="text-xs font-weight-bold mb-0">
+            {!! $post->status->getBadge() !!}
+        </p>
+    </td>
+    <td>
         <form action="{{ route('admin.post.destroy', ['post' => $post]) }}" method="POST">
             @csrf
             @method('POST')
+            <a class="btn btn-success mb-0" href="{{ route('post.preview', ['post' => $post]) }}" target="_blank"><i class="fa fa-eye"></i></a>
             <a class="btn btn-warning mb-0" href="{{ route('admin.post.edit', ['post' => $post]) }}"><i class="fa fa-edit"></i></a>
             <button class="btn btn-danger mb-0"><i class="fa fa-times"></i></button>
         </form>

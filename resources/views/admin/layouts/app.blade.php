@@ -53,7 +53,7 @@
     <div class="collapse navbar-collapse  w-auto  max-height-vh-100 h-100" id="sidenav-collapse-main">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="../pages/dashboard.html">
+                <a class="nav-link" href="{{ route('admin.dashboard') }}">
                     <i class="fa fa-desktop"></i>
                     <span class="nav-link-text ms-1">Dashboard</span>
                 </a>

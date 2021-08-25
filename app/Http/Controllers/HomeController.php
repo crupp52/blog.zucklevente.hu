@@ -8,7 +8,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $posts = Post::orderBy('created_at')->limit(5)->get();
+        $posts = Post::published()->orderByDesc('created_at')->limit(5)->get();
 
         return view('welcome', [
             'posts' => $posts,

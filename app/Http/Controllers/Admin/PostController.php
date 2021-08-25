@@ -24,13 +24,7 @@ class PostController extends Controller
             'posts' => $posts,
         ]);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
-     */
-    public function create(FormBuilder $formBuilder): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
+    public function create(FormBuilder $formBuilder)
     {
         $form = $formBuilder->create(PostForm::class, [
             'method' => 'POST',
@@ -77,7 +71,7 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function edit(FormBuilder $formBuilder, Post $post): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
+    public function edit(FormBuilder $formBuilder, Post $post)
     {
         $form = $formBuilder->create(PostForm::class, [
             'method' => 'PUT',

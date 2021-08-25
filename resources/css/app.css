@@ -1,3 +1,49 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+    .navbar a {
+        @apply border-b-2 border-transparent duration-300 hover:border-green-500;
+    }
+
+    .navbar .active {
+        @apply border-gray-200;
+    }
+
+    .post {
+        @apply mb-16;
+    }
+
+    .post h1 {
+        @apply text-2xl mb-4;
+    }
+
+    .post p {
+        @apply mb-4;
+    }
+
+    .post ul {
+        @apply mb-4;
+    }
+
+    .post ol {
+        @apply mb-4;
+    }
+
+    .content p {
+        @apply mb-8;
+    }
+
+    .content img {
+        @apply mb-8 w-full;
+    }
+
+    .content ul {
+        @apply list-disc ml-4;
+    }
+
+    .content ol {
+        @apply list-decimal ml-4;
+    }
+}

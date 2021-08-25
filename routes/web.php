@@ -11,3 +11,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::resource('post', \App\Http\Controllers\PostController::class)->only('index', 'show');
+
+Route::get('admin/phpVersion', function () {
+    phpinfo();
+});

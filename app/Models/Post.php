@@ -5,7 +5,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
-use Spatie\LaravelMarkdown\MarkdownRenderer;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
@@ -43,11 +42,6 @@ class Post extends Model
 
     public function getShortContent($length = 350): string
     {
-        return Str::limit(strip_tags($this->getHtmlContent()), $length);
-    }
-
-    public function getHtmlContent(): string
-    {
-        return app(MarkdownRenderer::class)->toHtml($this->content);
+        return Str::limit(strip_tags($this->content), $length);
     }
 }

@@ -6,9 +6,7 @@
     <div class="mt-8 flex gap-4">
         <div class="w-full md:w-3/4 content">
             <div class="post">
-                <x-markdown>
-                    {{ $post->content }}
-                </x-markdown>
+                {!! $post->content !!}
             </div>
         </div>
         @include('post.components.profile', ['user' => $post->user])

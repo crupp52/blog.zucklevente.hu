@@ -19,6 +19,8 @@
 
 @push('js')
     <script>
-        const simplemde = new SimpleMDE({ element: document.getElementById("editor") });
+        $(document).ready(function() {
+            $('#editor').summernote();
+        });
     </script>
 @endpush

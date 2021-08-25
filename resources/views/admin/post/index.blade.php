@@ -6,6 +6,7 @@
             <div class="card mb-4">
                 <div class="card-header pb-0">
                     <h6>Authors table</h6>
+                    <a href="{{ route('admin.post.create') }}" class="btn btn-success float-end"><i class="fa fa-plus"></i> New Post</a>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
                     <div class="table-responsive p-0">
@@ -22,6 +23,11 @@
                             @forelse($posts as $post)
                                 @include('admin.post.inc.tableRow')
                             @empty
+                                <tr>
+                                    <td colspan="4">
+                                        No elements
+                                    </td>
+                                </tr>
                             @endforelse
                             </tbody>
                         </table>

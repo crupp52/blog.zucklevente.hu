@@ -21,6 +21,8 @@
         "tailwindcss": "^2.0.2"
     },
     "dependencies": {
-        "shiki": "^0.9.6"
+        "@toast-ui/editor": "^3.0.3",
+        "shiki": "^0.9.6",
+        "simplemde": "^1.11.2"
     }
 }

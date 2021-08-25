@@ -41,8 +41,13 @@ class Post extends Model
         return round(str_word_count($this->content) / 160);
     }
 
-    public function getShortContent(): string
+    public function getShortContent($length = 350): string
     {
-        return Str::limit(strip_tags(app(MarkdownRenderer::class)->toHtml($this->content)), 350);
+        return Str::limit(strip_tags($this->getHtmlContent()), $length);
+    }
+
+    public function getHtmlContent(): string
+    {
+        return app(MarkdownRenderer::class)->toHtml($this->content);
     }
 }

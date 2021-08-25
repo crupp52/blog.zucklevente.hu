@@ -1,3 +1,5 @@
 @import 'nucleo-icons.css';
 @import 'nucleo-svg.css';
 @import 'soft-ui-dashboard.min.css';
+
+@import "~@toast-ui/editor/dist/toastui-editor.css";

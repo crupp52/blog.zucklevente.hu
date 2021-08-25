@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
+use App\Enums\PostStatus;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
-use Spatie\LaravelMarkdown\MarkdownRenderer;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
@@ -17,7 +17,17 @@ class Post extends Model
     protected $fillable = [
         'title',
         'content',
+        'status'
     ];
+
+    protected array $casts = [
+        'status' => PostStatus::class,
+    ];
+
+    public static function published()
+    {
+        return self::where('status', PostStatus::Published);
+    }
 
     public function getSlugOptions(): SlugOptions
     {
@@ -38,16 +48,11 @@ class Post extends Model
 
     public function getReadTime(): float
     {
-        return round(str_word_count($this->content) / 160);
+        return round(str_word_count(strip_tags($this->content)) / 90);
     }
 
     public function getShortContent($length = 350): string
     {
-        return Str::limit(strip_tags($this->getHtmlContent()), $length);
-    }
-
-    public function getHtmlContent(): string
-    {
-        return app(MarkdownRenderer::class)->toHtml($this->content);
+        return Str::limit(strip_tags($this->content), $length);
     }
 }

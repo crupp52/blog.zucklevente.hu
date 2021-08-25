@@ -14,7 +14,7 @@ class PostController extends Controller
      */
     public function index(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
     {
-        $posts = Post::orderByDesc('created_at')->get();
+        $posts = Post::published()->orderByDesc('created_at')->get();
 
         return view('post.index', [
             'posts' => $posts

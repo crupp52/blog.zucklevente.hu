@@ -34,10 +34,11 @@
 {{--    <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />--}}
 <!-- CSS Files -->
     {{--    <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />--}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
     <link href="{{ asset('css/admin/app.css') }}" rel="stylesheet"/>
 
-    @livewireStyles
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
@@ -277,9 +278,7 @@
         </div>
     </div>
 </div>
-<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.5.2/perfect-scrollbar.min.js" integrity="sha512-byagY9YdfRsmvM/9ld4XQ9mvd9uNhNOaMzvCYpPw1CLuoIXAdWR8/6rHjRwuWy0Pi+JGWjDHiE7tVGhtPd21ZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
 <script src="{{ asset('js/admin/app.js') }}"></script>
 
 <script>
@@ -293,7 +292,6 @@
 </script>
 
 @stack('js')
-@livewireScripts
 </body>
 
 </html>

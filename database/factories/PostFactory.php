@@ -26,8 +26,8 @@ class PostFactory extends Factory
         $this->faker->addProvider(new FakerProvider($this->faker));
 
         return [
-            'title'   => $this->faker->text(),
-            'content' => $this->faker->markdown(),
+            'title'   => $this->faker->text(100),
+            'content' => $this->faker->text(1000),
             'user_id' => User::first()->id,
         ];
     }

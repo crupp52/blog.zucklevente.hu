@@ -11,6 +11,22 @@
         @apply border-gray-200;
     }
 
+    .content p {
+        @apply mb-8;
+    }
+
+    .content img {
+        @apply mb-8 w-full;
+    }
+
+    .content ul {
+        @apply list-disc ml-4;
+    }
+
+    .content ol {
+        @apply list-decimal ml-4;
+    }
+
     .post {
         @apply mb-16;
     }
@@ -31,19 +47,7 @@
         @apply mb-4;
     }
 
-    .content p {
-        @apply mb-8;
-    }
-
-    .content img {
-        @apply mb-8 w-full;
-    }
-
-    .content ul {
-        @apply list-disc ml-4;
-    }
-
-    .content ol {
-        @apply list-decimal ml-4;
+    .post img {
+        @apply mt-4 mb-0 mx-auto;
     }
 }

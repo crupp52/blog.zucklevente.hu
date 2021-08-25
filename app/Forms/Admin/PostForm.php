@@ -2,6 +2,7 @@
 
 namespace App\Forms\Admin;
 
+use App\Enums\PostStatus;
 use Kris\LaravelFormBuilder\Field;
 use Kris\LaravelFormBuilder\Form;
 
@@ -19,6 +20,11 @@ class PostForm extends Form
                 'attr'  => [
                     'id' => 'editor',
                 ]
+            ])
+            ->add('status', Field::CHOICE, [
+                'label'         => 'Status',
+                'choices'       => PostStatus::getKeys(),
+                'default_value' => PostStatus::Draft,
             ])
             ->add('submit', Field::BUTTON_SUBMIT, [
                 'label' => 'Save',

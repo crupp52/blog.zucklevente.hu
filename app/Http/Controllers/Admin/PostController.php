@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\PostRequest;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Kris\LaravelFormBuilder\FormBuilder;
 
 class PostController extends Controller
@@ -45,7 +46,10 @@ class PostController extends Controller
      */
     public function store(PostRequest $request): \Illuminate\Http\RedirectResponse
     {
-        if (!($post = Post::create($request->all()))) {
+        $fields = $request->all();
+        $fields['user_id'] = Auth::id();
+
+        if (!($post = Post::create($fields))) {
             return redirect()->back();
         }
 

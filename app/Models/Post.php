@@ -17,7 +17,8 @@ class Post extends Model
     protected $fillable = [
         'title',
         'content',
-        'status'
+        'status',
+        'user_id',
     ];
 
     protected $casts = [

@@ -20,7 +20,7 @@ class Post extends Model
         'status'
     ];
 
-    protected array $casts = [
+    protected $casts = [
         'status' => PostStatus::class,
     ];
 
